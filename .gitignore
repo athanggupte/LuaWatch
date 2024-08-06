@@ -1,0 +1,11 @@
+# Directories
+.vscode/
+.vs/
+build/
+
+# Output files
+*.so
+*.a
+*.o
+*.obj
+*.exe
