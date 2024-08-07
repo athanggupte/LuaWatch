@@ -2,6 +2,7 @@
 .vscode/
 .vs/
 build/
+install/
 
 # Output files
 *.so

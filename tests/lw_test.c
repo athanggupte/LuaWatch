@@ -1,5 +1,5 @@
-#include "../lwdebug.h"
-#include "../lua_ext.h"
+#include "lwdebug.h"
+#include "lua_ext.h"
 
 int default_hook(lw_Debugger * debugger, lua_State * L, lw_DebugData * dat)
 {

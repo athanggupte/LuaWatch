@@ -1,4 +1,4 @@
-#include "../rbtree.h"
+#include "rbtree.h"
 #include <stdio.h>
 
 struct MyData

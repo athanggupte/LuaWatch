@@ -1,5 +1,5 @@
 #include "lwdebug.h"
-
+#include "lwlua.h"
 #include "lua_ext.h"
 
 #include <stdio.h>
@@ -33,10 +33,10 @@ int main()
 	lua_State * L = luaL_newstate();
 
 	luaL_openlibs(L);
-	lua_openluawatch(L);
+	luaopen_lwlua(L);
 
 	print_top(L);
-	luaL_dostring("function doSomething() print \"doing something...\" end");
+	luaL_dostring(L, "function doSomething() print \"doing something...\" end");
 	print_top(L);
 
 	if (0) { // Check lw_Debugger metatable
@@ -55,7 +55,7 @@ int main()
 	int exist;
 
 	lw_Debugger debugger; // create on Lua stack as userdata as part of luawatch module
-	lw_debugger_init(&debugger);
+	lw_debugger_init(&debugger, L);
 
 	lw_add_breakpoint(&debugger, &(lw_Breakpoint){ .line=10, .chunkname="sample.lua" });
 	lw_add_breakpoint(&debugger, &(lw_Breakpoint){ .line=15, .chunkname="sample.lua" });
