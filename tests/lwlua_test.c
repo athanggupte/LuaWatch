@@ -1,5 +1,4 @@
 #include "lwdebug.h"
-#include "lwapi.h"
 
 #include "lua_ext.h"
 
